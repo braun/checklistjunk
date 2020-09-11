@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port =  process.env.EXPRESS_PORT
 
 var mongo_express = require('mongo-express/lib/middleware')
 var mongo_express_config = require('./mongo_express_config')
