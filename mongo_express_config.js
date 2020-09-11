@@ -4,7 +4,7 @@ let mongo = {
   // Setting the connection string will only give access to that database
   // to see more databases you need to set mongodb.admin to true or add databases to the mongodb.auth list
  // connectionString: process.env.ME_CONFIG_MONGODB_SERVER ? '' : process.env.ME_CONFIG_MONGODB_URL,
- connectionString: "mongodb://127.0.0.1:27017/"
+ connectionString: process.env.ME_CONFIG_MONGODB_CONNECTIONSTRING
 };
 
 // Accesing Bluemix variable to get MongoDB info
