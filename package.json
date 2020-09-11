@@ -1,0 +1,17 @@
+{
+  "name": "mongolamp",
+  "version": "1.0.0",
+  "description": "Basic components for web app connected to mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stanislav Kunt",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongo-express": "^1.0.0-alpha.1"
+  }
+}

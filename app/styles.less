@@ -1,0 +1,101 @@
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.container
+{
+    padding: 5px;
+}
+
+.card(@color)
+{
+  
+    color: darken(@color,20%);
+    .container();
+    background: lighten(@color,40%);
+    border: 1px solid darken(@color,20%);
+    margin:5px;
+    header
+    {
+        color:white;
+        background-color: @color;
+
+    }
+    button
+    {
+        background-color: black;
+        padding: 10px;
+        color:white;
+        &:hover
+        {
+            cursor: pointer;
+        }
+    }
+    input
+    {
+        padding: 10px;
+        margin-right: 5px;
+    }
+}
+.horizontal
+{
+    display: flex;
+    flex-flow: row wrap;
+    &.right
+    {
+        justify-content: flex-end;
+    }
+    &.left
+    {
+        justify-content: flex-start;
+    }
+    &.center
+    {
+        justify-content: center;
+    }
+    &.spaceBetween
+    {
+        justify-content: space-between;
+    }
+    &.spaceAround
+    {
+        justify-content: space-around;
+    }
+    &.spaceEvenly
+    {
+        justify-content: space-evenly;
+    }
+}
+
+.orangeCard
+{
+    .card(#ffbb00);
+    
+}
+.yellowCard
+{
+    .card(#ffd900);
+    
+}
+.greenCard
+{
+    .card(#00a605)
+}
+.blueCard
+{
+    .card(#003dff)
+}
+.redCard
+{
+    .card(hsv(44%,100%,100%));
+    
+}
+
+.tabLeft
+{
+    padding-left: 10%;
+}

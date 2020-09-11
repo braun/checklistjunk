@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  padding: 5px;
+}
+.horizontal {
+  display: flex;
+  flex-flow: row wrap;
+}
+.horizontal.right {
+  justify-content: flex-end;
+}
+.horizontal.left {
+  justify-content: flex-start;
+}
+.horizontal.center {
+  justify-content: center;
+}
+.horizontal.spaceBetween {
+  justify-content: space-between;
+}
+.horizontal.spaceAround {
+  justify-content: space-around;
+}
+.horizontal.spaceEvenly {
+  justify-content: space-evenly;
+}
+.orangeCard {
+  color: #997000;
+  padding: 5px;
+  background: #fff1cc;
+  border: 1px solid #997000;
+  margin: 5px;
+}
+.orangeCard header {
+  color: white;
+  background-color: #ffbb00;
+}
+.orangeCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.orangeCard button:hover {
+  cursor: pointer;
+}
+.orangeCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.yellowCard {
+  color: #998200;
+  padding: 5px;
+  background: #fff7cc;
+  border: 1px solid #998200;
+  margin: 5px;
+}
+.yellowCard header {
+  color: white;
+  background-color: #ffd900;
+}
+.yellowCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.yellowCard button:hover {
+  cursor: pointer;
+}
+.yellowCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.greenCard {
+  color: #004002;
+  padding: 5px;
+  background: #73ff77;
+  border: 1px solid #004002;
+  margin: 5px;
+}
+.greenCard header {
+  color: white;
+  background-color: #00a605;
+}
+.greenCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.greenCard button:hover {
+  cursor: pointer;
+}
+.greenCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.blueCard {
+  color: #002599;
+  padding: 5px;
+  background: #ccd8ff;
+  border: 1px solid #002599;
+  margin: 5px;
+}
+.blueCard header {
+  color: white;
+  background-color: #003dff;
+}
+.blueCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.blueCard button:hover {
+  cursor: pointer;
+}
+.blueCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.redCard {
+  color: #990100;
+  padding: 5px;
+  background: #ffcccc;
+  border: 1px solid #990100;
+  margin: 5px;
+}
+.redCard header {
+  color: white;
+  background-color: #ff0200;
+}
+.redCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.redCard button:hover {
+  cursor: pointer;
+}
+.redCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.tabLeft {
+  padding-left: 10%;
+}
