@@ -1,1 +1,1 @@
-docker run -p 49160:8080 -d  braunie/checklist-app .
+docker run -p 49160:8080 -d  braunie/checklist-app  --env-file env_vars.txt
