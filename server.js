@@ -37,6 +37,7 @@ function mongoApi()
     const CONNECTION_URL = mongo_express_config.mongodb.connectionString;
     const DATABASE_NAME = "checklist";
     var database, collection;
+    
     MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
         if(error) {
             throw error;
