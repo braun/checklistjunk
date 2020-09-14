@@ -1,26 +1,35 @@
 const express = require('express')
 const app = express()
-const port =  process.env.EXPRESS_PORT
-
-var mongo_express = require('mongo-express/lib/middleware')
-var mongo_express_config = require('./mongo_express_config')
+const port =  process.env.EXPRESS_PORT; 
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+const DATABASE_NAME = process.env.DATABASE_NAME;
 
 const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 
+if(port == null)
+    throw "Set EXPRESS_PORT";
+
+if(DB_CONNECTION_STRING == null)
+    throw "Set DB_CONNECTION_STRING"
+
+
+if(DB_CONNECTION_STRING == null)
+    throw "Set DATABASE_NAME"
+
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
-// initialize mongo express
-var mge = mongo_express(mongo_express_config);
-mge.then((result)=>
-{
-    app.use('/mongo_express',result );
-},(reason)=>
-{
-    console.error("MONGO EXPRESS FAILED ",reason)
-})
+// // initialize mongo express
+// var mge = mongo_express(mongo_express_config);
+// mge.then((result)=>
+// {
+//     app.use('/mongo_express',result );
+// },(reason)=>
+// {
+//     console.error("MONGO EXPRESS FAILED ",reason)
+// })
 
 //serve browser app
 app.use('/',express.static('app'))
@@ -34,11 +43,11 @@ app.listen(port, () => {
 
 function mongoApi()
 {
-    const CONNECTION_URL = mongo_express_config.mongodb.connectionString;
-    const DATABASE_NAME = "checklist";
+    
+    
     var database, collection;
     
-    MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
+    MongoClient.connect(DB_CONNECTION_STRING, { useNewUrlParser: true }, (error, client) => {
         if(error) {
             throw error;
         }
