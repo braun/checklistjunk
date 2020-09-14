@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port =  process.env.EXPRESS_PORT; 
+var port =  process.env.EXPRESS_PORT; 
 const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 const DATABASE_NAME = process.env.DATABASE_NAME;
 
@@ -9,13 +9,13 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 
 if(port == null)
-    throw "Set EXPRESS_PORT";
-
+    port = 8080;
+    
 if(DB_CONNECTION_STRING == null)
     throw "Set DB_CONNECTION_STRING"
 
 
-if(DB_CONNECTION_STRING == null)
+if(DATABASE_NAME == null)
     throw "Set DATABASE_NAME"
 
 app.use(BodyParser.json());
