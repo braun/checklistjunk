@@ -1,5 +1,6 @@
 var jsom = require('./Jsom');
 var jsomEl = require('./JsomElement');
+require('./cbase/hamLayout');
 require('./httpHelper');
 
 function CARD(color,title,binder)
@@ -31,9 +32,23 @@ function CARD(color,title,binder)
     ])
     return rv;
 }
-var jsomRoot = DIV().class("container").collection(data=>data,
-    (checklist)=> CARD("orange",checklist.title,checklist=>checklist)
+var jsomContent = DIV().class("container").collection(data=>data,
+    (checklist)=> CARD("navy",checklist.title,checklist=>checklist)
 )
+
+var jsomRoot = HAMLAYOUT().content(jsomContent);
+var sideNav = jsomRoot.sidenav;
+
+var logoOverlay = DIV("logoOverlay").class("botright").stack([
+    SPAN().text("Stanislav Kunt").class("overlogo")
+]);
+sideNav.logoCont.build().appendChild(logoOverlay.build());
+
+var menuItems = [
+    sideMenuItem("miTemplates",["fa",,"fa-book"],"Checklist Templates"),
+    sideMenuItem("mitNew",["fa","fa-plus"],"New Checklist")
+]
+sideNav.menuCont.stack(menuItems);
 //    CARD("blue","PROCESSING",(data)=>data.processing),
 //    CARD("yellow","WARNING",(data)=>data.warning),
 //    CARD("red","ALERT",data=>data.alert),
@@ -43,7 +58,7 @@ var jsomRoot = DIV().class("container").collection(data=>data,
 //        return rv;
 //    })
 
-
+jsom.setTitle("Checklist");
 jsom.setJsomRoot(jsomRoot);
     
 httpGet("/templates",function(data)

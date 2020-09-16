@@ -5,7 +5,106 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+body {
+  height: 100vh;
+}
 .container {
+  padding: 5px;
+}
+.button {
+  cursor: pointer;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.hamButton {
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+.hamButton.opened {
+  color: white;
+}
+#menuCont {
+  padding-top: 5mm;
+}
+.navBarMenuItem {
+  padding-top: 2mm;
+  padding-bottom: 2mm;
+  padding-left: 5mm;
+  padding-right: 5mm;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 14pt;
+}
+.overlogo {
+  padding: 3mm;
+  color: white;
+}
+.grow {
+  flex-grow: 1;
+}
+.hamLayout {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+}
+.hamLayout.right {
+  justify-content: flex-end;
+}
+.hamLayout.left {
+  justify-content: flex-start;
+}
+.hamLayout.center {
+  justify-content: center;
+}
+.hamLayout.spaceBetween {
+  justify-content: space-between;
+}
+.hamLayout.spaceAround {
+  justify-content: space-around;
+}
+.hamLayout.spaceEvenly {
+  justify-content: space-evenly;
+}
+.hamContent {
+  flex-grow: 1;
+  padding-top: 1cm;
+  overflow-y: auto;
+  height: 100%;
+}
+.sidenav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  width: 8cm;
+  border-right: 1px solid black;
+}
+.sidenav img {
+  width: 100%;
+}
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.botright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.stdpadding {
   padding: 5px;
 }
 .horizontal {
@@ -29,6 +128,11 @@
 }
 .horizontal.spaceEvenly {
   justify-content: space-evenly;
+}
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 .orangeCard {
   color: #997000;
@@ -119,6 +223,29 @@
   cursor: pointer;
 }
 .blueCard input {
+  padding: 10px;
+  margin-right: 5px;
+}
+.navyCard {
+  color: #00121a;
+  padding: 5px;
+  background: #4dc9ff;
+  border: 1px solid #00121a;
+  margin: 5px;
+}
+.navyCard header {
+  color: white;
+  background-color: #005980ff;
+}
+.navyCard button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+.navyCard button:hover {
+  cursor: pointer;
+}
+.navyCard input {
   padding: 10px;
   margin-right: 5px;
 }

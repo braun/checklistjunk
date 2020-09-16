@@ -6,11 +6,60 @@
     box-sizing: border-box;
 }
 
+body
+{
+    height: 100vh;
+}
 .container
 {
     padding: 5px;
 }
+.button
+{
+    cursor: pointer;
+}
 
+.relative
+{
+    position: relative;
+}
+.absolute
+{
+    position: absolute;
+}
+.hamButton
+{
+    .stdpadding();
+    .button();
+    .topleft();
+    z-index: 10000;
+    &.opened
+    {
+        color: white;
+    }
+}
+#menuCont
+{
+    
+    padding-top: 5mm;
+}
+.navBarMenuItem
+{
+    padding-top: 2mm;
+    padding-bottom: 2mm;
+    padding-left: 5mm;
+    padding-right: 5mm;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 14pt;
+}
+.overlogo
+{
+    padding: 3mm;
+    color: white;
+}
 .card(@color)
 {
   
@@ -41,6 +90,52 @@
         margin-right: 5px;
     }
 }
+.grow
+{
+    flex-grow: 1;
+}
+.hamLayout
+{
+    .relative();
+    .horizontal();
+    height: 100%;
+}
+.hamContent
+{
+    .grow();
+    padding-top:1cm;
+    overflow-y: auto;
+    height: 100%;
+}
+.sidenav
+{
+    img
+    {
+        width: 100%;
+    }
+    position: fixed;
+    .vertical();
+    height: 100%;
+    width: 8cm;
+    border-right: 1px solid black;
+}
+.topleft
+{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.botright
+{
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+.stdpadding
+{
+    padding: 5px;
+}
+
 .horizontal
 {
     display: flex;
@@ -70,7 +165,12 @@
         justify-content: space-evenly;
     }
 }
-
+.vertical
+{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 .orangeCard
 {
     .card(#ffbb00);
@@ -88,6 +188,10 @@
 .blueCard
 {
     .card(#003dff)
+}
+.navyCard
+{
+    .card(#005980ff)
 }
 .redCard
 {

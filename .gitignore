@@ -16,4 +16,5 @@ __MACOSX
 .svn
 .vscode
 node_modules
+devenvironment.sh
 

@@ -40,7 +40,7 @@ class JsomElement
     }
     rebind()
     {
-        this.bind(model)
+        this.bind(this.model)
     }
     bind(data)
     {
@@ -294,6 +294,24 @@ window.BUTTON = function(text,clickCallback,id,options)
 
 
 
+class elIMG extends JsomElement
+{
+    constructor(id,options)
+    {
+        super(id,"IMG",options)
+    }
+    
+    src(src)
+    {
+        this.build().src = src;
+        return this;
+    }
+}
+window.IMG = function(id,options)
+{
+    return new elIMG(id,options);
+}
+
 class elHEADER extends JsomElement
 {
     constructor(id,options)
@@ -341,3 +359,7 @@ window.HORIZONTAL = function(id,options)
 {
     return DIV().class("horizontal");
 }
+
+
+module.exports.elDIV = elDIV;
+module.exports.JsomElement = JsomElement;

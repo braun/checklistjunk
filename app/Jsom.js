@@ -15,5 +15,10 @@ function setJsomRoot(jsomNode)
     root = jsomNode;
 }
 
-
+function setTitle(title)
+{
+  document.title = title;
+}
 module.exports.setJsomRoot = setJsomRoot;
+
+module.exports.setTitle = setTitle;
